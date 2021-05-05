@@ -192,28 +192,28 @@ VALUES
 
 /*1- Trazer os todos os dados.*/
 
-SELECT * FROM ESTOQUE;
+USE LIVRARIA;
+SELECT * FROM LIVROS;
 
 /*2- Trazer O nome do livro e o nome da editora.*/
 
-SELECT LIVRO, EDITORA FROM ESTOQUE;
+ SELECT NOME_LIVRO, NOME_EDITORA FROM LIVROS; 
 
 /*3- Trazer o nome do livro e a UF dos livros publicados por autores do sexo masculino.*/
 
-SELECT LIVRO, UF FROM ESTOQUE WHERE SEXO = 'M';
+SELECT NOME_LIVRO, UF_EDITORA FROM LIVROS WHERE SEXO_AUTOR = 'M';
 
 /*4- Trazer o nome do livro e o numero de páginas de livro publicados por autores do sexo feminino.*/
 
-SELECT LIVRO, PAGINAS FROM ESTOQUE WHERE SEXO = 'F';
+SELECT NOME_LIVRO, NUMERO_PAGINAS FROM LIVROS WHERE SEXO_AUTOR = 'F';
 
 /*5- Trazer os valores dos livros das editoras de São Paulo.*/
 
-SELECT VALOR FROM ESTOQUE WHERE UF = 'SP';
+SELECT VALOR_LIVRO FROM LIVROS WHERE UF_EDITORA = 'SP';
 
 /*6- Trazer os dados dos autores do sexo masculIno que tiveram livros publicados em São Paulo ou Rio de Janeiro (questão desafio).*/
 
-SELECT AUTOR, SEXO 
-FROM ESTOQUE 
-WHERE SEXO = 'M' 
-AND UF = 'SP' 
-OR UF = 'RJ';
+SELECT NOME_AUTOR, SEXO_AUTOR, UF_EDITORA
+FROM LIVROS
+WHERE SEXO_AUTOR = 'M' AND (UF = 'SP' OR UF = 'RJ');
+
