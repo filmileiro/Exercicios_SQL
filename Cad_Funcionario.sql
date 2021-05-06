@@ -17,6 +17,29 @@ create table funcionarios
     
 );
 
+/* exercicio */
+
+/* Considerando o que vc aprendeu sobre performance, resolva os exercicios abaixo */
+
+SELECT COUNT(*) FROM FUNCIONARIOS;
+
+--Traga os funcionarios que trabalhem
+--no departamento de filmes OU no
+--departamento de roupas
+
+select *from funcionarios
+where departamento = 'Roupas'
+or departamento = 'Filmes';
+
+-- 21 | Filmes   53 | Roupas
+
+--Como estamos trabalhando com OR e a segunda condicao é opcional
+--colocamos na primeira condicao quem tem mais chances de uma saida
+--verdadeira, pois a segunda condicao nao será checada nesse caso.
+
+
+
+
 
 insert into funcionarios values (1,'Kelley','rkelley0@soundcloud.com','Feminino','Computadores','10/2/2009',67470,'Structural Engineer',2);
 insert into funcionarios values (2,'Armstrong','sarmstrong1@infoseek.co.jp','Masculino','Esporte','3/31/2008',71869,'Financial Advisor',2);
